@@ -91,7 +91,7 @@ export function Home() {
             </div>
           </Card>
           <Card className="absolute -bottom-8 -left-6 z-20 rotate-3 p-4">
-            <p className="text-xs font-bold uppercase tracking-wide text-indigo-600">Nivel de detective</p>
+            <p className="text-xs font-bold uppercase tracking-wide text-indigo-600">Nivel de investigador</p>
             <p className="text-2xl font-black">Investigador Senior</p>
           </Card>
         </div>

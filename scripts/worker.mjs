@@ -22,7 +22,7 @@ import { fileURLToPath } from 'node:url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const RAIZ = join(__dirname, '..')
 const USER_AGENT =
-  'DetectiveDigitalWorker/1.0 (unicamente feeds RSS/Atom; finalidad pedagogica)'
+  'MediaMindWorker/1.0 (unicamente feeds RSS/Atom; finalidad pedagogica)'
 
 const FUENTES = [
   {

@@ -127,7 +127,7 @@ export function Comunidad() {
     e.preventDefault()
     if (!titulo.trim() || !descripcion.trim() || !url.trim()) return
     agregarMaterial({
-      autor: autor.trim() || 'Detective anónimo',
+      autor: autor.trim() || 'Investigador anónimo',
       titulo: titulo.trim(),
       descripcion: descripcion.trim(),
       categoria,
@@ -141,7 +141,7 @@ export function Comunidad() {
     e.preventDefault()
     if (!titulo.trim() || !descripcion.trim()) return
     agregar({
-      autor: autor.trim() || 'Detective anónimo',
+      autor: autor.trim() || 'Investigador anónimo',
       titulo: titulo.trim(),
       descripcion: descripcion.trim(),
       categoria,

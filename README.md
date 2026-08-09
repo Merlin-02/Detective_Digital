@@ -11,7 +11,7 @@ UNESCO MIL CLICKS.
 - 🕵️ **Juego de investigación**: casos reales y sintéticos (deepfakes, voces
   clonadas, cadenas virales) clasificados como real / manipulado / falso / IA.
 - 🍎 **Etiqueta informativa**: precisión crítica, diversidad de fuentes, balance
-  temático y nivel de detective; se genera con cada decisión en el juego.
+  temático y nivel de investigador; se genera con cada decisión en el juego.
 - 👥 **Modo equipo (Mystery Media)**: roles complementarios y dictamen grupal.
 - 🌐 **Multijugador online**: salas por código, turnos y votación sincronizada.
 - 🏘 **Comunidad educativa verificada**: cursos y webinars, material de estudio

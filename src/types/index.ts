@@ -112,7 +112,7 @@ export interface RespuestaCaso {
   equipo?: boolean
 }
 
-export interface NivelDetective {
+export interface NivelInvestigador {
   nombre: string
   indice: 0 | 1 | 2 | 3
   minimo: number
@@ -126,7 +126,7 @@ export interface Etiqueta {
   consumoInformacional: number
   puntos: number
   casosResueltos: number
-  nivel: NivelDetective
+  nivel: NivelInvestigador
   porCategoria: Record<Categoria, number>
   porTipo: Record<TipoContenido, number>
   aciertosPorDificultad: Record<number, { aciertos: number; total: number }>
