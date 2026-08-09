@@ -20,6 +20,39 @@ UNESCO MIL CLICKS.
   borrables y el usuario decide qué se comparte.
 - 🌍 **i18n**: ES / EN / PT.
 
+## Marco pedagógico
+
+**Detective Digital está alineado con las 5 Leyes de la Alfabetización Mediática
+e Informacional (MIL) de la UNESCO y con el enfoque UNESCO MIL CLICKS:**
+
+1. **La información, la comunicación, las bibliotecas, los medios, la
+   tecnología y el internet** son para el compromiso cívico crítico y el
+   desarrollo sostenible: ningún medio es más relevante que otro.
+2. **Toda persona es creadora de información/conocimiento** y tiene un mensaje:
+   debe estar empoderada para acceder a nueva información y expresarse. La MIL
+   conjuga alfabetización mediática e informacional.
+3. **La información, el conocimiento y los mensajes no son neutrales**: siempre
+   son producto de un proceso y están sujetos a influencias e intereses.
+4. **Toda persona quiere conocer y comprender** nueva información, conocimiento
+   y mensajes, así como comunicarse con otras personas; sus derechos nunca
+   deben verse comprometidos.
+5. **La MIL no se adquiere de una vez**: es un proceso vivo y dinámico que
+   cubre acceso, evaluación y uso, junto con la creación y comunicación de
+   contenidos en medios y tecnología.
+
+En la práctica, el proyecto aplica estas leyes como:
+
+- **Juego + práctica**: los hábitos de consumo de información se entrenan en el
+  momento donde circula la desinformación (memes, cadenas, videos virales), no
+  con guías estáticas (`Ley 5`).
+- **Creación y participación**: el banco de casos crece con propuestas de la
+  comunidad y comunidades educativas verificadas ofrecen cursos y material de
+  estudio (`Leyes 2 y 4`).
+- **Evaluación crítica**: cada caso entrena el contraste de fuentes y señales
+  de manipulación (`Ley 3`).
+- **Acceso y uso responsable**: la etiqueta informativa y la privacidad como
+  pedagogía hacen visible el propio consumo sin datos individuales (`Ley 1`).
+
 ## Stack
 
 - React 19 + TypeScript + Vite
