@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-display: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+
+  /* Paleta UNESCO: escala de azul basada en "UNESCO Blue" (#0077D4 / Pantone 285) */
+  --color-indigo-50: #eef8ff;
+  --color-indigo-100: #dff1ff;
+  --color-indigo-200: #b6e2ff;
+  --color-indigo-300: #80caff;
+  --color-indigo-400: #38abf2;
+  --color-indigo-500: #0f8fe6;
+  --color-indigo-600: #0077d4;
+  --color-indigo-700: #005eb3;
+  --color-indigo-800: #004a8c;
+  --color-indigo-900: #003a6e;
+  --color-indigo-950: #00264c;
+
+  /* Acento secundario (cian UN) para gradientes de marca */
+  --color-violet-500: #00a0d6;
+  --color-violet-600: #008ac2;
+  --color-violet-700: #006ea3;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased;
+  }
+  .dark body {
+    @apply bg-slate-950 text-slate-200;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-indigo-500;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .label-strip {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 8px,
+      rgba(255, 255, 255, 0.06) 8px,
+      rgba(255, 255, 255, 0.06) 16px
+    );
+  }
+}

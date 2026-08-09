@@ -1,0 +1,20 @@
+{
+  "name": "Detective Digital — Mi Etiqueta Informativa",
+  "short_name": "Detective",
+  "description": "Juego colaborativo y etiqueta informativa para entrenar la detección de desinformación e IA.",
+  "lang": "es",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f172a",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
