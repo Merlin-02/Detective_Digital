@@ -11,7 +11,7 @@ export const pt = {
   'nav.profile': 'Minha etiqueta',
   'nav.community': 'Comunidade',
   'nav.skipto': 'Pular para o conteúdo',
-  'nav.logoName': 'Detective Digital',
+  'nav.logoName': 'MediaMind',
 
   'common.cancel': 'Cancelar',
   'common.edit': 'Editar',

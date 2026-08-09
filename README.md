@@ -1,4 +1,4 @@
-# Detective Digital · Mi Etiqueta Informativa
+# MediaMind · Mi Etiqueta Informativa
 
 MVP para el **Hackathon UNESCO de Juventudes 2026** — alfabetización mediática e
 informacional (MIL). Un juego de investigación con una "etiqueta informativa"
@@ -22,7 +22,7 @@ UNESCO MIL CLICKS.
 
 ## Marco pedagógico
 
-**Detective Digital está alineado con las 5 Leyes de la Alfabetización Mediática
+**MediaMind está alineado con las 5 Leyes de la Alfabetización Mediática
 e Informacional (MIL) de la UNESCO y con el enfoque UNESCO MIL CLICKS:**
 
 1. **La información, la comunicación, las bibliotecas, los medios, la

@@ -1,4 +1,4 @@
-# DETECTIVE DIGITAL: Mi Etiqueta Informativa
+# MediaMind: Mi Etiqueta Informativa
 
 Propuesta de alfabetización mediática e informacional para el Hackathon UNESCO de Juventudes — 2026
 
@@ -70,7 +70,7 @@ El diseño prioriza **lenguaje, dificultad y casos por rangos**, manteniendo un 
 
 ## 5. Solución
 
-**Detective Digital** es un ecosistema de alfabetización mediática e informacional **pensado por y para jóvenes**, que une dos piezas que hoy existen por separado:
+**MediaMind** es un ecosistema de alfabetización mediática e informacional **pensado por y para jóvenes**, que une dos piezas que hoy existen por separado:
 
 1. Un **juego de investigación** colaborativo (individual y en equipo) que entrena la detección de desinformación, manipulación digital y contenido generado con IA.
 2. Una **etiqueta informativa personal y de equipo** —inspirada en el etiquetado nutricional— que traduce las decisiones del juego en un perfil visual de hábitos de consumo de información.

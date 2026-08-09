@@ -1,4 +1,4 @@
-// Detective Digital · Servidor de multijugador online (WebSocket).
+// MediaMind · Servidor de multijugador online (WebSocket).
 // Salas por código, turnos y dictamen colectivo sincronizado.
 //
 // Uso:  node server/index.mjs            (puerto por defecto 8787)
@@ -233,7 +233,7 @@ const server = createServer((req, res) => {
 
 const wss = new WebSocketServer({ server })
 server.listen(PUERTO, () => {
-  console.log(`Detective Digital · multijugador en ws://localhost:${PUERTO} · estáticos en http://localhost:${PUERTO}`)
+  console.log(`MediaMind · multijugador en ws://localhost:${PUERTO} · estáticos en http://localhost:${PUERTO}`)
 })
 
 wss.on('connection', (ws) => {

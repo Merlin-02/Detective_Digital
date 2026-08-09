@@ -1,4 +1,4 @@
-// Worker de captura de casos para "Detective Digital".
+// Worker de captura de casos para "MediaMind".
 // Lee feeds RSS/Atom públicos de verificadores y normaliza cada entrada en un
 // CasoWeb (con heurística pedagógica) y publica:
 //   - public/casos_web.json   → consumido por la app frontend
@@ -250,7 +250,7 @@ async function main() {
     }
   }
 
-  console.log('Detective Digital · Worker de casos')
+  console.log('MediaMind · Worker de casos')
   console.log(`Fuentes: ${FUENTES.map((f) => f.nombre).join(', ')}\n`)
 
   const vistos = cargarVistos()
