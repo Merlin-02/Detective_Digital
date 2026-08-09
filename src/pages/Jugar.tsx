@@ -5,11 +5,13 @@ import { CASOS, CASOS_EQUIPO } from '../data/casos'
 import { useGame } from '../stores/useGame'
 import { useCasos } from '../stores/useCasos'
 import { dificultadDesbloqueada } from '../services/label'
+import { traducirCaso } from '../services/traducirCaso'
 import type { Categoria, Caso } from '../types'
 import { Card, CategoriaChip, DificultadChip, TipoChip, Progreso, Chip } from '../components/ui'
 
-function CasoCard({ caso, desbloqueado }: { caso: Caso; desbloqueado: boolean }) {
-  const { t } = useI18n()
+function CasoCard({ caso: casoBase, desbloqueado }: { caso: Caso; desbloqueado: boolean }) {
+  const { t, lang } = useI18n()
+  const caso = traducirCaso(casoBase, lang)
   return (
     <Link
       to={desbloqueado ? `/caso/${caso.id}` : '#caso-bloqueado'}

@@ -5,6 +5,7 @@ import { CASOS, CASOS_EQUIPO } from '../data/casos'
 import { useGame } from '../stores/useGame'
 import { useCasos } from '../stores/useCasos'
 import { dificultadDesbloqueada, puntajeDe } from '../services/label'
+import { traducirCaso } from '../services/traducirCaso'
 import type { Caso, Rol, Veredicto } from '../types'
 import { Card, CategoriaChip, DificultadChip, TipoChip, Chip } from '../components/ui'
 
@@ -529,10 +530,12 @@ function CasoEquipo({ caso }: { caso: Caso }) {
 
 export function Caso() {
   const { id } = useParams()
+  const { lang } = useI18n()
   const casosWeb = useCasos((s) => s.web)
   const respuestas = useGame((s) => s.respuestas)
   const casos = useMemo(() => [...ESTATICOS, ...casosWeb], [casosWeb])
-  const caso = casos.find((c) => c.id === id)
+  const casoBase = casos.find((c) => c.id === id)
+  const caso = casoBase ? traducirCaso(casoBase, lang) : undefined
 
   if (!caso) return <Navigate to="/jugar" replace />
   if (caso.dificultad > dificultadDesbloqueada(respuestas)) return <Bloqueo caso={caso} />

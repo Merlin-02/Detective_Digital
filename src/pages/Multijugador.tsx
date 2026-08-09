@@ -6,6 +6,7 @@ import { useGame } from '../stores/useGame'
 import { useCasos } from '../stores/useCasos'
 import { usePartida } from '../stores/usePartida'
 import { dificultadDesbloqueada } from '../services/label'
+import { traducirCaso } from '../services/traducirCaso'
 import type { Caso, Veredicto } from '../types'
 import { Card, Chip, CategoriaChip, DificultadChip, TipoChip } from '../components/ui'
 
@@ -17,7 +18,7 @@ function nombreJugador(sala: ReturnType<typeof usePartida.getState>['sala'], id:
 }
 
 export function Multijugador() {
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
   const respuestas = useGame((s) => s.respuestas)
   const casosWeb = useCasos((s) => s.web)
   const { estatus, yoId, sala, error, conectar, crearSala, unirseSala, empezar, enviarVoto, salir } = usePartida()
@@ -33,9 +34,13 @@ export function Multijugador() {
     return todos
       .filter((c) => c.modo === 'individual' && c.dificultad <= max)
       .sort((a, b) => a.dificultad - b.dificultad)
-  }, [respuestas, casosWeb])
+      .map((c) => traducirCaso(c, lang))
+  }, [respuestas, casosWeb, lang])
 
-  const todosCasos = useMemo(() => [...CASOS, ...CASOS_EQUIPO, ...casosWeb], [casosWeb])
+  const todosCasos = useMemo(
+    () => [...CASOS, ...CASOS_EQUIPO, ...casosWeb].map((c) => traducirCaso(c, lang)),
+    [casosWeb, lang],
+  )
 
   const caso = useMemo(
     () => todosCasos.find((c) => c.id === sala?.casoId),
