@@ -45,9 +45,10 @@ En la práctica, el proyecto aplica estas leyes como:
 - **Juego + práctica**: los hábitos de consumo de información se entrenan en el
   momento donde circula la desinformación (memes, cadenas, videos virales), no
   con guías estáticas (`Ley 5`).
-- **Creación y participación**: el banco de casos crece con propuestas de la
-  comunidad y comunidades educativas verificadas ofrecen cursos y material de
-  estudio (`Leyes 2 y 4`).
+- **Creación y participación**: cualquier persona puede crear una comunidad
+  educativa verificada y compartir conocimiento a través de cursos, webinars,
+  material de estudio y casos co-creados; el banco de casos crece con las
+  propuestas de la comunidad (`Leyes 2 y 4`).
 - **Evaluación crítica**: cada caso entrena el contraste de fuentes y señales
   de manipulación (`Ley 3`).
 - **Acceso y uso responsable**: la etiqueta informativa y la privacidad como
