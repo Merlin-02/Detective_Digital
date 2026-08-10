@@ -42,7 +42,7 @@ export function Home() {
           </span>
           <h1 className="mt-4 text-5xl font-black tracking-tight sm:text-6xl">
             {t('home.title')}{' '}
-            <span className="bg-gradient-to-r from-indigo-300 to-violet-500 bg-clip-text text-transparent">
+            <span className="texto-destello bg-gradient-to-r from-indigo-300 to-violet-500 bg-clip-text text-transparent">
               {t('home.titleAccent')}
             </span>
           </h1>
@@ -52,7 +52,7 @@ export function Home() {
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
               to="/jugar"
-              className="rounded-xl bg-indigo-300 px-5 py-3 font-semibold text-black shadow-[0_2px_12px_rgba(199,255,0,0.3)] hover:bg-indigo-400"
+              className="cta-pulso rounded-xl bg-indigo-300 px-5 py-3 font-semibold text-black hover:bg-indigo-400"
             >
               {t('home.ctaPlay')}
             </Link>
@@ -160,7 +160,7 @@ export function Home() {
         <p className="mx-auto mt-3 max-w-xl text-sm text-slate-400">{t('home.demoHint')}</p>
         <Link
           to="/jugar"
-          className="mt-6 inline-block rounded-xl bg-indigo-300 px-6 py-3 font-bold text-black shadow-[0_2px_12px_rgba(199,255,0,0.3)] hover:bg-indigo-400"
+          className="cta-pulso mt-6 inline-block rounded-xl bg-indigo-300 px-6 py-3 font-bold text-black hover:bg-indigo-400"
         >
           {t('home.ctaPlay')}
         </Link>

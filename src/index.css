@@ -210,6 +210,63 @@
   .flotar-rev {
     animation: flotar-rev 8s ease-in-out infinite;
   }
+
+  /* Destello del degradado del título */
+  .texto-destello {
+    background-size: 200% auto;
+    animation: destello 6s ease-in-out infinite;
+  }
+
+  /* Pulso de brillo en CTAs principales */
+  .cta-pulso {
+    animation: pulso 2.8s ease-in-out infinite;
+  }
+
+  /* Respuesta táctil al pulsar botones */
+  button,
+  a[role="button"] {
+    transition: transform 0.12s ease;
+  }
+  button:active,
+  a[role="button"]:active {
+    transform: scale(0.96);
+  }
+}
+
+@keyframes destello {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes pulso {
+  0%, 100% { box-shadow: 0 2px 12px rgb(126 183 255 / 0.45); }
+  50% { box-shadow: 0 2px 26px rgb(126 183 255 / 0.85); }
+}
+
+/* Puntero personalizado de MediaMind (lupa/diana) */
+:root {
+  --cursor-lupa:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='9' fill='none' stroke='%233f83f8' stroke-width='2.5'/><circle cx='12' cy='12' r='2.6' fill='%230d1420'/><circle cx='12' cy='12' r='1.2' fill='%237eb7ff'/></svg>")
+    12 12, auto;
+  --cursor-diana:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='10' fill='%237eb7ff'/><circle cx='12' cy='12' r='4.5' fill='%230d1420'/></svg>")
+    12 12, pointer;
+}
+
+body {
+  cursor: var(--cursor-lupa);
+}
+a,
+button,
+[role="button"],
+select,
+summary {
+  cursor: var(--cursor-diana);
+}
+button:disabled,
+input:disabled,
+select:disabled,
+:disabled {
+  cursor: not-allowed;
 }
 
 @layer utilities {
