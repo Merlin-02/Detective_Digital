@@ -41,7 +41,7 @@ export function Navbar() {
   }, [tema])
 
   return (
-    <header className="sticky top-0 z-40 border-b glass-border glass-soft">
+    <header className="sticky top-0 z-40 border-b glass-border glass">
       <a href="#contenido" className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:rounded focus:bg-indigo-300 focus:px-3 focus:py-1 focus:text-black">
         {t('nav.skipto')}
       </a>
