@@ -93,30 +93,51 @@
 }
 
 @layer components {
-  /* Cristal adaptativo: blanco translúcido en claro, blanco tenue en oscuro */
+  /* Cristal adaptativo: fondo sólido de respaldo + versión translúcida con blur */
   .glass {
-    background-color: rgb(255 255 255 / 0.85);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-  }
-  .dark .glass {
-    background-color: rgb(255 255 255 / 0.22);
+    background-color: rgb(255 255 255 / 0.9);
   }
   .glass-strong {
-    background-color: rgb(255 255 255 / 0.92);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-  }
-  .dark .glass-strong {
-    background-color: rgb(255 255 255 / 0.28);
+    background-color: rgb(246 249 253 / 0.95);
   }
   .glass-soft {
-    background-color: rgb(255 255 255 / 0.75);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    background-color: rgb(255 255 255 / 0.82);
+  }
+  .dark .glass {
+    background-color: rgb(30 44 63 / 0.85);
+  }
+  .dark .glass-strong {
+    background-color: rgb(36 52 74 / 0.9);
   }
   .dark .glass-soft {
-    background-color: rgb(255 255 255 / 0.18);
+    background-color: rgb(26 38 55 / 0.8);
+  }
+
+  @supports ((backdrop-filter: blur(4px)) or (-webkit-backdrop-filter: blur(4px))) {
+    .glass,
+    .glass-strong,
+    .glass-soft {
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+    .glass {
+      background-color: rgb(255 255 255 / 0.85);
+    }
+    .glass-strong {
+      background-color: rgb(255 255 255 / 0.92);
+    }
+    .glass-soft {
+      background-color: rgb(255 255 255 / 0.75);
+    }
+    .dark .glass {
+      background-color: rgb(255 255 255 / 0.22);
+    }
+    .dark .glass-strong {
+      background-color: rgb(255 255 255 / 0.28);
+    }
+    .dark .glass-soft {
+      background-color: rgb(255 255 255 / 0.18);
+    }
   }
   .glass-border {
     border-color: rgb(23 32 27 / 0.16);
@@ -175,6 +196,38 @@
   0% { transform: translate(0, 0) scale(1); }
   50% { transform: translate(-9vw, -5vh) scale(1.1); }
   100% { transform: translate(-3vw, 5vh) scale(0.9); }
+}
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes flotar {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-10px) rotate(-1deg); }
+}
+@keyframes flotar-rev {
+  0%, 100% { transform: translateY(0) rotate(3deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Entrada escalonada de las secciones de cada página */
+  main > * > * {
+    animation: aparecer 0.5s ease-out both;
+  }
+  main > * > :nth-child(2) { animation-delay: 0.05s; }
+  main > * > :nth-child(3) { animation-delay: 0.1s; }
+  main > * > :nth-child(4) { animation-delay: 0.15s; }
+  main > * > :nth-child(5) { animation-delay: 0.2s; }
+  main > * > :nth-child(n+6) { animation-delay: 0.25s; }
+
+  /* Tarjetas decorativas flotando en el hero */
+  .flotar {
+    animation: flotar 7s ease-in-out infinite;
+  }
+  .flotar-rev {
+    animation: flotar-rev 8s ease-in-out infinite;
+  }
 }
 
 @layer utilities {

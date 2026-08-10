@@ -11,7 +11,7 @@ export function Card({
 }) {
   return (
     <div
-      className={`rounded-3xl border glass-border glass shadow-[0_8px_32px_rgba(0,0,0,0.35)] ${className}`}
+      className={`rounded-3xl border glass-border glass shadow-[0_8px_32px_rgba(0,0,0,0.35)] transition-transform duration-300 hover:-translate-y-1 ${className}`}
     >
       {children}
     </div>

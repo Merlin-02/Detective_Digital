@@ -66,7 +66,7 @@ export function Home() {
         </div>
 
         <div className="relative hidden lg:block">
-          <Card className="relative z-10 -rotate-2 p-5">
+          <Card className="flotar relative z-10 -rotate-2 p-5">
             <div className="flex items-center justify-between border-b border-slate-800 pb-2 text-xs font-bold uppercase tracking-widest text-slate-400">
               <span>ETIQUETA INFORMATIVA</span>
               <CategoriaChip categoria="ia" />
@@ -90,7 +90,7 @@ export function Home() {
               ))}
             </div>
           </Card>
-          <Card className="absolute -bottom-8 -left-6 z-20 rotate-3 p-4">
+          <Card className="flotar-rev absolute -bottom-8 -left-6 z-20 rotate-3 p-4">
             <p className="text-xs font-bold uppercase tracking-wide text-indigo-300">Nivel de investigador</p>
             <p className="text-2xl font-black text-slate-100">Investigador Senior</p>
           </Card>
