@@ -5,11 +5,11 @@ import { Card, CategoriaChip } from '../components/ui'
 function Paso({ codigo, nombre, subtitulo }: { codigo: string; nombre: string; subtitulo?: string }) {
   return (
     <div className="flex flex-col items-center gap-1 text-center">
-      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-600 font-black text-white shadow-lg">
+      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-300 font-black text-black shadow-[0_2px_12px_rgba(199,255,0,0.3)]">
         {codigo}
       </div>
-      <p className="mt-2 text-sm font-bold uppercase tracking-tight">{nombre}</p>
-      {subtitulo && <p className="max-w-[180px] text-xs text-slate-500 dark:text-slate-400">{subtitulo}</p>}
+      <p className="mt-2 text-sm font-bold uppercase tracking-tight text-slate-100">{nombre}</p>
+      {subtitulo && <p className="max-w-[180px] text-xs text-slate-400">{subtitulo}</p>}
     </div>
   )
 }
@@ -37,28 +37,28 @@ export function Home() {
       {/* Hero */}
       <section className="grid items-center gap-10 py-14 lg:grid-cols-2">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-indigo-700 dark:border-indigo-800 dark:bg-indigo-950 dark:text-indigo-300">
+          <span className="inline-flex items-center gap-2 rounded-full border border-indigo-800 bg-indigo-950 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-indigo-300">
             {t('home.kicker')}
           </span>
           <h1 className="mt-4 text-5xl font-black tracking-tight sm:text-6xl">
             {t('home.title')}{' '}
-            <span className="bg-gradient-to-r from-indigo-600 to-violet-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-indigo-300 to-violet-500 bg-clip-text text-transparent">
               {t('home.titleAccent')}
             </span>
           </h1>
-          <p className="mt-4 max-w-xl text-balance text-lg text-slate-600 dark:text-slate-300">
+          <p className="mt-4 max-w-xl text-balance text-lg text-slate-300">
             {t('home.subtitle')}
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
               to="/jugar"
-              className="rounded-xl bg-indigo-600 px-5 py-3 font-semibold text-white shadow hover:bg-indigo-500"
+              className="rounded-xl bg-indigo-300 px-5 py-3 font-semibold text-black shadow-[0_2px_12px_rgba(199,255,0,0.3)] hover:bg-indigo-400"
             >
               {t('home.ctaPlay')}
             </Link>
             <Link
               to="/perfil"
-              className="rounded-xl border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-700 hover:border-indigo-400 hover:text-indigo-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
+              className="rounded-xl border border-slate-700 bg-slate-900 px-5 py-3 font-semibold text-slate-200 hover:border-indigo-400 hover:text-indigo-300"
             >
               {t('home.ctaLabel')}
             </Link>
@@ -67,7 +67,7 @@ export function Home() {
 
         <div className="relative hidden lg:block">
           <Card className="relative z-10 -rotate-2 p-5">
-            <div className="flex items-center justify-between border-b border-slate-200 pb-2 text-xs font-bold uppercase tracking-widest text-slate-500">
+            <div className="flex items-center justify-between border-b border-slate-800 pb-2 text-xs font-bold uppercase tracking-widest text-slate-400">
               <span>ETIQUETA INFORMATIVA</span>
               <CategoriaChip categoria="ia" />
             </div>
@@ -83,7 +83,7 @@ export function Home() {
                     <span>{n}</span>
                     <strong>{v}</strong>
                   </div>
-                  <div className="mt-1 h-2 rounded-full bg-slate-200">
+                  <div className="mt-1 h-2 rounded-full bg-slate-800">
                     <div className={`h-2 rounded-full ${c}`} style={{ width: v as string }} />
                   </div>
                 </div>
@@ -91,8 +91,8 @@ export function Home() {
             </div>
           </Card>
           <Card className="absolute -bottom-8 -left-6 z-20 rotate-3 p-4">
-            <p className="text-xs font-bold uppercase tracking-wide text-indigo-600">Nivel de investigador</p>
-            <p className="text-2xl font-black">Investigador Senior</p>
+            <p className="text-xs font-bold uppercase tracking-wide text-indigo-300">Nivel de investigador</p>
+            <p className="text-2xl font-black text-slate-100">Investigador Senior</p>
           </Card>
         </div>
       </section>
@@ -154,13 +154,13 @@ export function Home() {
       </section>
 
       {/* CTA final */}
-      <section className="rounded-3xl bg-gradient-to-br from-indigo-600 to-violet-600 px-8 py-12 text-center text-white">
-        <h2 className="text-3xl font-black">{t('home.ctaTitle')}</h2>
-        <p className="mx-auto mt-2 max-w-xl text-indigo-100">{t('home.ctaSub')}</p>
-        <p className="mx-auto mt-3 max-w-xl text-sm text-indigo-200">{t('home.demoHint')}</p>
+      <section className="rounded-3xl border border-slate-800 bg-slate-900 px-8 py-12 text-center">
+        <h2 className="text-3xl font-black text-slate-100">{t('home.ctaTitle')}</h2>
+        <p className="mx-auto mt-2 max-w-xl text-slate-400">{t('home.ctaSub')}</p>
+        <p className="mx-auto mt-3 max-w-xl text-sm text-slate-400">{t('home.demoHint')}</p>
         <Link
           to="/jugar"
-          className="mt-6 inline-block rounded-xl bg-white px-6 py-3 font-bold text-indigo-700 shadow hover:bg-indigo-50"
+          className="mt-6 inline-block rounded-xl bg-indigo-300 px-6 py-3 font-bold text-black shadow-[0_2px_12px_rgba(199,255,0,0.3)] hover:bg-indigo-400"
         >
           {t('home.ctaPlay')}
         </Link>

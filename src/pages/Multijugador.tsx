@@ -60,7 +60,7 @@ export function Multijugador() {
             <button
               type="button"
               onClick={conectar}
-              className="mt-3 rounded-xl bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-500"
+              className="mt-3 rounded-xl bg-indigo-300 px-4 py-2 font-semibold text-black hover:bg-indigo-400"
             >
               {t('multi.retry')}
             </button>
@@ -83,7 +83,7 @@ export function Multijugador() {
               onChange={(e) => setNombre(e.target.value)}
               maxLength={20}
               placeholder={t('multi.name.placeholder')}
-              className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100"
+              className="mt-1 w-full rounded-xl border glass-border glass px-3 py-2 text-slate-100"
             />
             <label className="mt-3 block text-sm font-semibold">{t('multi.case.label')}</label>
             <select
@@ -92,7 +92,7 @@ export function Multijugador() {
                 setCasoId(e.target.value)
                 setErrorCaso('')
               }}
-              className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100"
+              className="mt-1 w-full rounded-xl border glass-border glass px-3 py-2 text-slate-100"
             >
               <option value="">—</option>
               {casosDisponibles.map((c) => (
@@ -119,7 +119,7 @@ export function Multijugador() {
                 conectar()
                 crearSala(nombre.trim(), c.id, c.dificultad)
               }}
-              className="mt-4 w-full rounded-xl bg-indigo-600 px-4 py-2.5 font-bold text-white hover:bg-indigo-500 disabled:cursor-not-allowed disabled:bg-slate-300 dark:disabled:bg-slate-700"
+              className="mt-4 w-full rounded-xl bg-indigo-300 px-4 py-2.5 font-bold text-black hover:bg-indigo-400 disabled:cursor-not-allowed disabled:bg-slate-800"
             >
               {estatus === 'abriendo' ? t('multi.connecting') : t('multi.create.cta')}
             </button>
@@ -134,7 +134,7 @@ export function Multijugador() {
               onChange={(e) => setNombre(e.target.value)}
               maxLength={20}
               placeholder={t('multi.name.placeholder')}
-              className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100"
+              className="mt-1 w-full rounded-xl border glass-border glass px-3 py-2 text-slate-100"
             />
             <label className="mt-3 block text-sm font-semibold">{t('multi.code.label')}</label>
             <input
@@ -142,7 +142,7 @@ export function Multijugador() {
               onChange={(e) => setCodigo(e.target.value.toUpperCase())}
               maxLength={6}
               placeholder={t('multi.code.placeholder')}
-              className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 font-black tracking-[0.5em] dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100"
+              className="mt-1 w-full rounded-xl border glass-border glass px-3 py-2 font-black tracking-[0.5em] text-slate-100"
             />
             <button
               type="button"
@@ -174,7 +174,7 @@ export function Multijugador() {
           <button
             type="button"
             onClick={() => navigator.clipboard?.writeText(sala.codigo)}
-            className="mt-3 rounded-lg border border-slate-300 px-3 py-1.5 text-sm font-semibold text-slate-600 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800"
+            className="mt-3 rounded-lg border glass-border px-3 py-1.5 text-sm font-semibold text-slate-300 hover:bg-black/10 dark:hover:bg-white/10"
           >
             {t('multi.lobby.copyCode')}
           </button>
@@ -183,7 +183,7 @@ export function Multijugador() {
         <Card className="mt-6 p-6">
           <div className="flex items-center justify-between">
             <h2 className="font-bold">{t('multi.players')} ({sala.jugadores.length})</h2>
-            <Chip className="border border-slate-300 bg-slate-50 text-slate-600 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300">
+            <Chip className="border glass-border glass text-slate-300">
               {conectados}/{sala.jugadores.length} {t('multi.connected')}
             </Chip>
           </div>
@@ -215,19 +215,19 @@ export function Multijugador() {
               type="button"
               disabled={conectados < 2 || !caso}
               onClick={empezar}
-              className="rounded-xl bg-indigo-600 px-6 py-3 font-bold text-white hover:bg-indigo-500 disabled:cursor-not-allowed disabled:bg-slate-300 dark:disabled:bg-slate-700"
+              className="rounded-xl bg-indigo-300 px-6 py-3 font-bold text-black hover:bg-indigo-400 disabled:cursor-not-allowed disabled:bg-slate-800"
             >
               {!caso ? t('multi.startBlocked') : conectados < 2 ? t('multi.startNeed') : t('multi.start')}
             </button>
           ) : (
-            <p className="rounded-xl bg-slate-100 px-4 py-3 text-sm text-slate-500 dark:bg-slate-800 dark:text-slate-300">
+            <p className="rounded-xl glass-soft px-4 py-3 text-sm text-slate-300">
               {t('multi.waitHost')}
             </p>
           )}
           <button
             type="button"
             onClick={() => salir()}
-            className="rounded-xl border border-rose-300 bg-white px-4 py-2.5 font-semibold text-rose-600 hover:bg-rose-50 dark:border-rose-800 dark:bg-slate-900"
+            className="rounded-xl border border-rose-500/30 bg-rose-400/10 px-4 py-2.5 font-semibold text-rose-600 dark:text-rose-300 backdrop-blur-xl hover:bg-rose-400/20"
           >
             {t('multi.exit')}
           </button>
@@ -294,7 +294,7 @@ export function Multijugador() {
           <button
             type="button"
             onClick={() => salir()}
-            className="mt-4 rounded-xl border border-slate-300 bg-white px-4 py-2.5 font-semibold text-slate-700 hover:bg-slate-100 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200"
+            className="mt-4 rounded-xl border glass-border glass px-4 py-2.5 font-semibold text-slate-200 hover:bg-black/10 dark:hover:bg-white/10"
           >
             {t('multi.exit')}
           </button>
@@ -313,7 +313,7 @@ export function Multijugador() {
             <h2 className="text-xl font-bold">{t('case.pistasTitle')}</h2>
             <div className="mt-3 space-y-2">
               {caso.pistas.map((p) => (
-                <div key={p.id} className="rounded-xl border border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-900">
+                <div key={p.id} className="rounded-xl border glass-border glass">
                   <div className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left">
                     <span className="inline-flex items-center gap-2 font-semibold">
                       <span className="rounded bg-indigo-100 px-1.5 py-0.5 text-[10px] font-bold uppercase text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
@@ -368,7 +368,7 @@ function TurnoVoto({
 
   if (!esMiTurno) {
     return (
-      <p className="mt-6 rounded-xl bg-slate-100 px-4 py-3 text-sm text-slate-500 dark:bg-slate-800 dark:text-slate-300">
+      <p className="mt-6 rounded-xl glass-soft px-4 py-3 text-sm text-slate-300">
         {t('multi.waitText')}
       </p>
     )
@@ -382,7 +382,7 @@ function TurnoVoto({
   }
 
   return (
-    <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-900">
+    <div className="mt-8 rounded-3xl border glass-border glass p-5">
       <h2 className="text-xl font-bold">{t('multi.vote.title')}</h2>
       <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{t('multi.vote.hint')}</p>
 
@@ -394,8 +394,8 @@ function TurnoVoto({
             onClick={() => setVered(v)}
             className={`rounded-xl border p-4 text-left font-semibold transition-colors ${
               vered === v
-                ? 'border-indigo-500 bg-indigo-600 text-white'
-                : 'border-slate-300 bg-white text-slate-700 hover:border-indigo-400 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200'
+                ? 'border-indigo-400 bg-indigo-300 text-black'
+                : 'border glass-border glass text-slate-200 hover:border-indigo-400/60'
             }`}
           >
             {t(`case.vd.${v}`)}
@@ -413,7 +413,7 @@ function TurnoVoto({
               className={`flex items-start gap-2 rounded-lg border px-3 py-2 text-sm transition-colors ${
                 activa
                   ? 'border-indigo-400 bg-indigo-50 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-200'
-                  : 'border-slate-300 bg-white text-slate-600 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300'
+                  : 'border glass-border glass text-slate-300'
               }`}
             >
               <input
@@ -434,7 +434,7 @@ function TurnoVoto({
         onChange={(e) => setInforme(e.target.value)}
         rows={4}
         maxLength={400}
-        className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100"
+        className="mt-2 w-full rounded-xl border glass-border glass p-3 text-sm text-slate-100"
         placeholder={t('multi.reportPlaceholder')}
       />
 
@@ -443,7 +443,7 @@ function TurnoVoto({
         disabled={!vered}
         onClick={() => vered && enviarVoto({ vered, evidencias, informe })}
         className={`mt-4 rounded-xl px-6 py-3 font-bold text-white transition-colors ${
-          vered ? 'bg-indigo-600 hover:bg-indigo-500' : 'cursor-not-allowed bg-slate-400'
+          vered ? 'bg-indigo-300 hover:bg-indigo-400' : 'cursor-not-allowed bg-slate-800'
         }`}
       >
         {t('multi.submit')}
@@ -507,7 +507,7 @@ function Dictamen({
           <button
             type="button"
             onClick={empezar}
-            className="rounded-xl bg-indigo-600 px-6 py-3 font-bold text-white hover:bg-indigo-500"
+            className="rounded-xl bg-indigo-300 px-6 py-3 font-bold text-black hover:bg-indigo-400"
           >
             {t('multi.restart')}
           </button>
@@ -515,11 +515,11 @@ function Dictamen({
         <button
           type="button"
           onClick={() => salir()}
-          className="rounded-xl border border-rose-300 bg-white px-4 py-2.5 font-semibold text-rose-600 hover:bg-rose-50 dark:border-rose-800 dark:bg-slate-900"
+          className="rounded-xl border border-rose-500/30 bg-rose-400/10 px-4 py-2.5 font-semibold text-rose-600 dark:text-rose-300 backdrop-blur-xl hover:bg-rose-400/20"
         >
           {t('multi.exit')}
         </button>
-        <Link to="/jugar" className="rounded-xl border border-slate-300 bg-white px-4 py-2.5 font-semibold text-slate-700 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200">
+        <Link to="/jugar" className="rounded-xl border glass-border glass px-4 py-2.5 font-semibold text-slate-200">
           {t('case.next')}
         </Link>
       </div>

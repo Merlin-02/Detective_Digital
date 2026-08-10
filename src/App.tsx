@@ -27,6 +27,7 @@ export default function App() {
   return (
     <div className="flex min-h-screen flex-col">
       <ScrollToTop />
+      <div aria-hidden className="ambient" />
       <Navbar />
       <main id="contenido" className="flex-1">
         <Suspense

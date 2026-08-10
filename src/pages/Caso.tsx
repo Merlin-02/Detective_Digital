@@ -67,7 +67,7 @@ function PistaItem({
   const { t } = useI18n()
   const [abierta, setAbierta] = useState(consultada)
   return (
-    <div className="rounded-xl border border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-900">
+    <div className="rounded-xl border glass-border glass">
       <button
         type="button"
         onClick={() => {
@@ -113,7 +113,7 @@ function PanelFeedback({
         >
           {correcto ? t('case.feedback.correct') : t('case.feedback.wrong')}
         </h3>
-        <Chip className="border border-slate-300 bg-white text-slate-600 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300">
+        <Chip className="border glass-border glass text-slate-300">
           {t('case.seeCorrect')}: {labelNivel}
         </Chip>
       </div>
@@ -127,7 +127,7 @@ function PanelFeedback({
       <h4 className="mt-5 font-bold">{t('case.signals')}</h4>
       <ul className="mt-2 grid gap-2 sm:grid-cols-2">
         {caso.senales.map((s) => (
-          <li key={s} className="flex items-start gap-2 rounded-lg bg-slate-50 px-3 py-2 text-sm dark:bg-slate-900">
+          <li key={s} className="flex items-start gap-2 rounded-lg glass-soft px-3 py-2 text-sm">
             <svg
               width="16"
               height="16"
@@ -167,7 +167,7 @@ function PanelFeedback({
 
       {caso.origen && (
         <div className="mt-4 flex flex-wrap items-center gap-2 text-sm">
-          <Chip className="border border-slate-300 bg-white text-slate-600 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300">
+          <Chip className="border glass-border glass text-slate-300">
             {t('case.verifiedBy')}: {caso.origen}
           </Chip>
           {caso.fuenteWeb && (
@@ -200,7 +200,7 @@ function Bloqueo({ caso }: { caso: Caso }) {
   const { t } = useI18n()
   return (
     <div className="mx-auto max-w-xl px-4 py-16 text-center">
-      <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-slate-200 text-slate-500 dark:bg-slate-800 dark:text-slate-400">
+      <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full glass-strong text-slate-400">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <rect x="4" y="10" width="16" height="10" rx="2" />
           <path d="M8 10V7a4 4 0 1 1 8 0v3" />
@@ -209,11 +209,11 @@ function Bloqueo({ caso }: { caso: Caso }) {
       <h1 className="mt-4 text-3xl font-black">{t('case.locked')}</h1>
       <p className="mt-2 text-slate-600 dark:text-slate-300">{t('case.lockedHint')}</p>
       <p className="mt-2 text-sm text-slate-400">{caso.titulo}</p>
-      <Chip className="mt-4 border border-slate-300 bg-white text-slate-600 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300">
+      <Chip className="mt-4 border glass-border glass text-slate-300">
         {t('play.newCase')} {caso.dificultad}/4
       </Chip>
       <div className="mt-6">
-        <Link to="/jugar" className="rounded-xl bg-indigo-600 px-5 py-3 font-semibold text-white">
+        <Link to="/jugar" className="rounded-xl bg-indigo-300 px-5 py-3 font-semibold text-black">
           {t('case.back')}
         </Link>
       </div>
@@ -229,11 +229,11 @@ function BotonesAccion() {
       <button
         type="button"
         onClick={() => navigate('/jugar')}
-        className="rounded-xl border border-slate-300 bg-white px-5 py-2.5 font-semibold text-slate-700 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200"
+        className="rounded-xl border glass-border glass px-5 py-2.5 font-semibold text-slate-200"
       >
         {t('case.next')}
       </button>
-      <Link to="/perfil" className="rounded-xl bg-indigo-600 px-5 py-2.5 font-semibold text-white">
+      <Link to="/perfil" className="rounded-xl bg-indigo-300 px-5 py-2.5 font-semibold text-black">
         {t('case.seeProfile')}
       </Link>
     </div>
@@ -311,7 +311,7 @@ function CasoIndividual({ caso }: { caso: Caso }) {
                 key={v.key}
                 type="button"
                 onClick={() => votarVeredicto(v.key)}
-                className="rounded-xl border border-slate-300 bg-white p-4 text-left font-semibold text-slate-700 hover:border-indigo-400 hover:bg-indigo-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-indigo-950"
+                className="rounded-xl border glass-border glass p-4 text-left font-semibold text-slate-200 hover:border-indigo-400/60 hover:bg-black/10 dark:hover:bg-white/10"
               >
                 {t(v.labelKey)}
               </button>
@@ -403,7 +403,7 @@ function CasoEquipo({ caso }: { caso: Caso }) {
                 key={r}
                 type="button"
                 onClick={() => iniciarSesion(r)}
-                className="rounded-xl border border-slate-300 bg-white p-4 text-left font-semibold text-slate-700 hover:border-indigo-400 hover:bg-indigo-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-indigo-950"
+                className="rounded-xl border glass-border glass p-4 text-left font-semibold text-slate-200 hover:border-indigo-400/60 hover:bg-black/10 dark:hover:bg-white/10"
               >
                 {t(`case.team.role.${r}`)}
               </button>
@@ -444,7 +444,7 @@ function CasoEquipo({ caso }: { caso: Caso }) {
             )}
           </div>
 
-          <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-900">
+          <div className="mt-8 rounded-2xl border glass-border glass p-5">
             <h2 className="text-xl font-bold">{t('case.team.dictTitle')}</h2>
 
             <div className="mt-4 grid gap-2 sm:grid-cols-2">
@@ -455,8 +455,8 @@ function CasoEquipo({ caso }: { caso: Caso }) {
                   onClick={() => setVeredicto(v.key)}
                   className={`rounded-xl border p-4 text-left font-semibold transition-colors ${
                     veredicto === v.key
-                      ? 'border-indigo-500 bg-indigo-600 text-white'
-                      : 'border-slate-300 bg-white text-slate-700 hover:border-indigo-400 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200'
+                      ? 'border-indigo-400 bg-indigo-300 text-black'
+                      : 'border glass-border glass text-slate-200 hover:border-indigo-400/60'
                   }`}
                 >
                   {t(v.labelKey)}
@@ -474,7 +474,7 @@ function CasoEquipo({ caso }: { caso: Caso }) {
                     className={`flex items-start gap-2 rounded-lg border px-3 py-2 text-sm transition-colors ${
                       activa
                         ? 'border-indigo-400 bg-indigo-50 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-200'
-                        : 'border-slate-300 bg-white text-slate-600 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300'
+                        : 'border glass-border glass text-slate-300'
                     }`}
                   >
                     <input
@@ -496,7 +496,7 @@ function CasoEquipo({ caso }: { caso: Caso }) {
               value={informe}
               onChange={(e) => setInforme(e.target.value)}
               rows={4}
-              className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200"
+              className="mt-2 w-full rounded-xl border glass-border glass p-3 text-sm text-slate-200"
               placeholder={t('case.team.placeholderReport')}
             />
 
@@ -505,7 +505,7 @@ function CasoEquipo({ caso }: { caso: Caso }) {
               onClick={presentar}
               disabled={!veredicto}
               className={`mt-4 rounded-xl px-6 py-3 font-bold text-white transition-colors ${
-                veredicto ? 'bg-indigo-600 hover:bg-indigo-500' : 'cursor-not-allowed bg-slate-400'
+                veredicto ? 'bg-indigo-300 hover:bg-indigo-400' : 'cursor-not-allowed bg-slate-800'
               }`}
             >
               {t('case.team.submit')}

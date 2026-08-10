@@ -42,7 +42,7 @@ function ChipVoto({
         className={`rounded-lg px-3 py-1 font-semibold transition-colors ${
           yaVotado
             ? 'cursor-default bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300'
-            : 'bg-indigo-600 text-white hover:bg-indigo-500'
+            : 'bg-indigo-300 text-black hover:bg-indigo-400'
         }`}
       >
         {yaVotado ? t('community.voted') : t('community.vote')}
@@ -180,8 +180,8 @@ export function Comunidad() {
             }}
             className={`rounded-lg px-4 py-2 text-sm font-semibold transition-colors ${
               pestaña === p.id
-                ? 'bg-indigo-600 text-white'
-                : 'border border-slate-300 text-slate-600 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800'
+                ? 'bg-indigo-300 text-black'
+                : 'border glass-border text-slate-300 hover:bg-black/10 dark:hover:bg-white/10'
             }`}
           >
             {p.label}
@@ -200,7 +200,7 @@ export function Comunidad() {
               <button
                 type="button"
                 onClick={() => setVista('proponer')}
-                className="rounded-xl bg-indigo-600 px-5 py-2.5 font-semibold text-white hover:bg-indigo-500"
+                className="rounded-xl bg-indigo-300 px-5 py-2.5 font-semibold text-black hover:bg-indigo-400"
               >
                 {t('community.curso.propose')}
               </button>
@@ -218,7 +218,7 @@ export function Comunidad() {
                       {t('community.status.pendiente')}
                     </Chip>
                   )}
-                  <Chip className="bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                  <Chip className="glass-strong text-slate-300">
                     {t(`community.tipoEntidad.${c.tipo}`)}
                   </Chip>
                 </div>
@@ -240,7 +240,7 @@ export function Comunidad() {
                   <select
                     value={comunidadId}
                     onChange={(e) => setComunidadId(e.target.value)}
-                    className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200"
+                    className="mt-1 w-full rounded-xl border glass-border glass px-3 py-2 text-sm text-slate-200"
                     required
                   >
                     {comunidades.map((c) => (
@@ -255,7 +255,7 @@ export function Comunidad() {
                   <select
                     value={tipo}
                     onChange={(e) => setTipo(e.target.value as (typeof TIPOS_CURSO)[number])}
-                    className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200"
+                    className="mt-1 w-full rounded-xl border glass-border glass px-3 py-2 text-sm text-slate-200"
                   >
                     {TIPOS_CURSO.map((tp) => (
                       <option key={tp} value={tp}>
@@ -269,7 +269,7 @@ export function Comunidad() {
                   <input
                     value={titulo}
                     onChange={(e) => setTitulo(e.target.value)}
-                    className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200"
+                    className="mt-1 w-full rounded-xl border glass-border glass px-3 py-2 text-sm text-slate-200"
                     required
                   />
                 </label>
@@ -279,7 +279,7 @@ export function Comunidad() {
                     value={descripcion}
                     onChange={(e) => setDescripcion(e.target.value)}
                     rows={3}
-                    className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200"
+                    className="mt-1 w-full rounded-xl border glass-border glass px-3 py-2 text-sm text-slate-200"
                     required
                   />
                 </label>
@@ -288,7 +288,7 @@ export function Comunidad() {
                   <select
                     value={categoria}
                     onChange={(e) => setCategoria(e.target.value as Categoria)}
-                    className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200"
+                    className="mt-1 w-full rounded-xl border glass-border glass px-3 py-2 text-sm text-slate-200"
                   >
                     {CATEGORIAS.map((c) => (
                       <option key={c} value={c}>
@@ -302,7 +302,7 @@ export function Comunidad() {
                   <input
                     value={duracion}
                     onChange={(e) => setDuracion(e.target.value)}
-                    className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200"
+                    className="mt-1 w-full rounded-xl border glass-border glass px-3 py-2 text-sm text-slate-200"
                   />
                 </label>
                 <label className="block text-sm">
@@ -310,7 +310,7 @@ export function Comunidad() {
                   <input
                     value={cuando}
                     onChange={(e) => setCuando(e.target.value)}
-                    className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200"
+                    className="mt-1 w-full rounded-xl border glass-border glass px-3 py-2 text-sm text-slate-200"
                   />
                 </label>
                 <label className="block text-sm">
@@ -319,11 +319,11 @@ export function Comunidad() {
                     value={url}
                     onChange={(e) => setUrl(e.target.value)}
                     placeholder="https://… (opcional)"
-                    className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200"
+                    className="mt-1 w-full rounded-xl border glass-border glass px-3 py-2 text-sm text-slate-200"
                   />
                 </label>
                 <div className="flex items-end gap-2 sm:col-span-2">
-                  <button type="submit" className="rounded-xl bg-indigo-600 px-5 py-2.5 font-semibold text-white hover:bg-indigo-500">
+                  <button type="submit" className="rounded-xl bg-indigo-300 px-5 py-2.5 font-semibold text-black hover:bg-indigo-400">
                     {t('community.submit')}
                   </button>
                   <button
@@ -391,7 +391,7 @@ export function Comunidad() {
               <button
                 type="button"
                 onClick={() => setVista('proponer')}
-                className="rounded-xl bg-indigo-600 px-5 py-2.5 font-semibold text-white hover:bg-indigo-500"
+                className="rounded-xl bg-indigo-300 px-5 py-2.5 font-semibold text-black hover:bg-indigo-400"
               >
                 {t('community.material.propose')}
               </button>
@@ -407,7 +407,7 @@ export function Comunidad() {
                   <input
                     value={autor}
                     onChange={(e) => setAutor(e.target.value)}
-                    className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200"
+                    className="mt-1 w-full rounded-xl border glass-border glass px-3 py-2 text-sm text-slate-200"
                   />
                 </label>
                 <label className="block text-sm">
@@ -415,7 +415,7 @@ export function Comunidad() {
                   <select
                     value={tipoMaterial}
                     onChange={(e) => setTipoMaterial(e.target.value as (typeof TIPOS_MATERIAL)[number])}
-                    className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200"
+                    className="mt-1 w-full rounded-xl border glass-border glass px-3 py-2 text-sm text-slate-200"
                   >
                     {TIPOS_MATERIAL.map((tp) => (
                       <option key={tp} value={tp}>
@@ -429,7 +429,7 @@ export function Comunidad() {
                   <input
                     value={titulo}
                     onChange={(e) => setTitulo(e.target.value)}
-                    className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200"
+                    className="mt-1 w-full rounded-xl border glass-border glass px-3 py-2 text-sm text-slate-200"
                     required
                   />
                 </label>
@@ -439,7 +439,7 @@ export function Comunidad() {
                     value={descripcion}
                     onChange={(e) => setDescripcion(e.target.value)}
                     rows={3}
-                    className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200"
+                    className="mt-1 w-full rounded-xl border glass-border glass px-3 py-2 text-sm text-slate-200"
                     required
                   />
                 </label>
@@ -448,7 +448,7 @@ export function Comunidad() {
                   <select
                     value={categoria}
                     onChange={(e) => setCategoria(e.target.value as Categoria)}
-                    className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200"
+                    className="mt-1 w-full rounded-xl border glass-border glass px-3 py-2 text-sm text-slate-200"
                   >
                     {CATEGORIAS.map((c) => (
                       <option key={c} value={c}>
@@ -463,12 +463,12 @@ export function Comunidad() {
                     value={url}
                     onChange={(e) => setUrl(e.target.value)}
                     placeholder="https://…"
-                    className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200"
+                    className="mt-1 w-full rounded-xl border glass-border glass px-3 py-2 text-sm text-slate-200"
                     required
                   />
                 </label>
                 <div className="flex items-end gap-2 sm:col-span-2">
-                  <button type="submit" className="rounded-xl bg-indigo-600 px-5 py-2.5 font-semibold text-white hover:bg-indigo-500">
+                  <button type="submit" className="rounded-xl bg-indigo-300 px-5 py-2.5 font-semibold text-black hover:bg-indigo-400">
                     {t('community.submit')}
                   </button>
                   <button
@@ -536,7 +536,7 @@ export function Comunidad() {
                   setVista('proponer')
                   setAbrir(true)
                 }}
-                className="rounded-xl bg-indigo-600 px-5 py-2.5 font-semibold text-white hover:bg-indigo-500"
+                className="rounded-xl bg-indigo-300 px-5 py-2.5 font-semibold text-black hover:bg-indigo-400"
               >
                 {t('community.propose')}
               </button>
@@ -552,7 +552,7 @@ export function Comunidad() {
                   <input
                     value={titulo}
                     onChange={(e) => setTitulo(e.target.value)}
-                    className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200"
+                    className="mt-1 w-full rounded-xl border glass-border glass px-3 py-2 text-sm text-slate-200"
                     required
                   />
                 </label>
@@ -561,7 +561,7 @@ export function Comunidad() {
                   <input
                     value={autor}
                     onChange={(e) => setAutor(e.target.value)}
-                    className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200"
+                    className="mt-1 w-full rounded-xl border glass-border glass px-3 py-2 text-sm text-slate-200"
                   />
                 </label>
                 <label className="block text-sm sm:col-span-2">
@@ -570,7 +570,7 @@ export function Comunidad() {
                     value={descripcion}
                     onChange={(e) => setDescripcion(e.target.value)}
                     rows={3}
-                    className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200"
+                    className="mt-1 w-full rounded-xl border glass-border glass px-3 py-2 text-sm text-slate-200"
                     required
                   />
                 </label>
@@ -579,7 +579,7 @@ export function Comunidad() {
                   <select
                     value={categoria}
                     onChange={(e) => setCategoria(e.target.value as Categoria)}
-                    className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200"
+                    className="mt-1 w-full rounded-xl border glass-border glass px-3 py-2 text-sm text-slate-200"
                   >
                     {CATEGORIAS.map((c) => (
                       <option key={c} value={c}>
@@ -589,7 +589,7 @@ export function Comunidad() {
                   </select>
                 </label>
                 <div className="flex items-end gap-2 sm:col-span-2">
-                  <button type="submit" className="rounded-xl bg-indigo-600 px-5 py-2.5 font-semibold text-white hover:bg-indigo-500">
+                  <button type="submit" className="rounded-xl bg-indigo-300 px-5 py-2.5 font-semibold text-black hover:bg-indigo-400">
                     {t('community.submit')}
                   </button>
                   <button

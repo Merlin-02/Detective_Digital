@@ -13,7 +13,7 @@ function Fila({
   color: string
 }) {
   return (
-    <div className="border-t border-slate-800 py-3">
+    <div className="border-t glass-border py-3">
       <div className="flex items-baseline justify-between gap-3">
         <div>
           <p className="font-semibold leading-snug">{titulo}</p>
@@ -21,7 +21,7 @@ function Fila({
         </div>
         <span className="text-xl font-extrabold tabular-nums">{valor}%</span>
       </div>
-      <div className="mt-2 h-2 w-full rounded-full bg-slate-200">
+      <div className="mt-2 h-2 w-full rounded-full bg-slate-800">
         <div className={`h-2 rounded-full ${color}`} style={{ width: `${valor}%` }} />
       </div>
     </div>
@@ -32,8 +32,8 @@ export function Etiqueta({ etiqueta, equipo = false }: { etiqueta: Etiqueta; equ
   const { t } = useI18n()
 
   return (
-    <div className="rounded-2xl border border-slate-300 bg-white text-slate-900 shadow-lg dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100">
-      <div className="rounded-t-2xl bg-amber-400 px-5 py-3 text-xs font-bold uppercase tracking-widest text-amber-950">
+    <div className="rounded-3xl border glass-border glass text-slate-100 shadow-lg">
+      <div className="rounded-t-2xl bg-indigo-500 px-5 py-3 text-xs font-bold uppercase tracking-widest text-white">
         {equipo ? t('profile.equipoLabel') : 'Etiqueta informativa'}
       </div>
       <div className="border-t border-slate-300 p-5 dark:border-slate-600">
@@ -41,7 +41,7 @@ export function Etiqueta({ etiqueta, equipo = false }: { etiqueta: Etiqueta; equ
           <p className="text-xs uppercase tracking-widest text-slate-500">
             {t(equipo ? 'profile.equipoLabel' : 'profile.yourLabel')}
           </p>
-          <span className="rounded-full bg-indigo-100 px-2 py-0.5 text-xs font-semibold text-indigo-700">
+          <span className="rounded-full bg-indigo-950 px-2 py-0.5 text-xs font-semibold text-indigo-300">
             {etiqueta.nivel ? t(`profile.nivel_${etiqueta.nivel.indice}`) : '—'}
           </span>
         </div>

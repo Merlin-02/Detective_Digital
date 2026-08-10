@@ -21,8 +21,8 @@ function CasoCard({ caso: casoBase, desbloqueado }: { caso: Caso; desbloqueado: 
       }}
       className={`group relative flex flex-col rounded-2xl border p-5 transition-all ${
         desbloqueado
-          ? 'border-slate-200 bg-white hover:-translate-y-0.5 hover:border-indigo-400 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900'
-          : 'cursor-not-allowed border-dashed border-slate-300 bg-slate-50 opacity-70 dark:border-slate-700 dark:bg-slate-900/60'
+          ? 'border glass-border glass hover:-translate-y-0.5 hover:border-indigo-400/60 hover:shadow-[0_8px_32px_rgba(0,0,0,0.35)]'
+          : 'cursor-not-allowed border-dashed glass-border glass-soft opacity-70'
       }`}
     >
       <div className="flex flex-wrap items-center gap-1.5">
@@ -40,15 +40,15 @@ function CasoCard({ caso: casoBase, desbloqueado }: { caso: Caso; desbloqueado: 
           </Chip>
         )}
       </div>
-      <h3 className="mt-3 text-base font-bold leading-snug text-slate-800 dark:text-slate-100">{caso.titulo}</h3>
+      <h3 className="mt-3 text-base font-bold leading-snug text-slate-600 dark:text-slate-100">{caso.titulo}</h3>
       <p className="mt-1 line-clamp-3 flex-1 text-sm text-slate-500 dark:text-slate-400">{caso.escenario}</p>
       <div className="mt-4">
         {desbloqueado ? (
-          <span className="rounded-lg bg-indigo-50 px-3 py-1.5 text-sm font-semibold text-indigo-700 group-hover:bg-indigo-600 group-hover:text-white">
+          <span className="rounded-lg bg-indigo-50 px-3 py-1.5 text-sm font-semibold text-indigo-700 group-hover:bg-indigo-300 group-hover:text-black">
             {t('app.check')}
           </span>
         ) : (
-          <span className="inline-flex items-center gap-1 rounded-lg bg-slate-200 px-3 py-1.5 text-sm font-semibold text-slate-500 dark:bg-slate-800 dark:text-slate-400">
+          <span className="inline-flex items-center gap-1 rounded-lg glass-strong px-3 py-1.5 text-sm font-semibold text-slate-400">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <rect x="4" y="10" width="16" height="10" rx="2" />
               <path d="M8 10V7a4 4 0 1 1 8 0v3" />
@@ -133,8 +133,8 @@ export function Jugar() {
             onClick={() => setFiltro(c)}
             className={`rounded-full px-3 py-1 text-sm font-medium transition-colors ${
               filtro === c
-                ? 'bg-indigo-600 text-white'
-                : 'border border-slate-300 bg-white text-slate-600 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300'
+                ? 'bg-indigo-300 text-black'
+                : 'border glass-border glass text-slate-300 hover:bg-black/10 dark:hover:bg-white/10'
             }`}
           >
             {c === 'all' ? t('play.all') : t(`profile.category.${c}`)}

@@ -1,29 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Geist+Pixel:wght@400&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+  --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
-  --font-display: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display: "Geist Pixel", "Geist", ui-sans-serif, system-ui, sans-serif;
 
-  /* Paleta UNESCO: escala de azul basada en "UNESCO Blue" (#0077D4 / Pantone 285) */
-  --color-indigo-50: #eef8ff;
-  --color-indigo-100: #dff1ff;
-  --color-indigo-200: #b6e2ff;
-  --color-indigo-300: #80caff;
-  --color-indigo-400: #38abf2;
-  --color-indigo-500: #0f8fe6;
-  --color-indigo-600: #0077d4;
-  --color-indigo-700: #005eb3;
-  --color-indigo-800: #004a8c;
-  --color-indigo-900: #003a6e;
-  --color-indigo-950: #00264c;
+  /* Escala de acento primario — azul vibrante */
+  --color-indigo-50: #eaf4ff;
+  --color-indigo-100: #d9ebff;
+  --color-indigo-200: #b3dbff;
+  --color-indigo-300: #7eb7ff;
+  --color-indigo-400: #5a9dff;
+  --color-indigo-500: #3f83f8;
+  --color-indigo-600: #2f6fd6;
+  --color-indigo-700: #2659ab;
+  --color-indigo-800: #20477f;
+  --color-indigo-900: #1b385e;
+  --color-indigo-950: #11233c;
 
-  /* Acento secundario (cian UN) para gradientes de marca */
-  --color-violet-500: #00a0d6;
-  --color-violet-600: #008ac2;
-  --color-violet-700: #006ea3;
+  /* Acento secundario — cian oceánico */
+  --color-violet-500: #22d3ee;
+  --color-violet-600: #06b6d4;
+  --color-violet-700: #0891b2;
+
+  /* Neutros adaptativos (flip claro/oscuro vía variables) */
+  --color-slate-50: var(--sl-50);
+  --color-slate-100: var(--sl-100);
+  --color-slate-200: var(--sl-200);
+  --color-slate-300: var(--sl-300);
+  --color-slate-400: var(--sl-400);
+  --color-slate-500: var(--sl-500);
+  --color-slate-600: var(--sl-600);
+  --color-slate-700: var(--sl-700);
+  --color-slate-800: var(--sl-800);
+  --color-slate-900: var(--sl-900);
+  --color-slate-950: var(--sl-950);
+}
+
+/* Tema claro (default) — tintas azuladas oscuras + superficies claras */
+:root {
+  --sl-50: #fbfdfe;
+  --sl-100: #13273c;
+  --sl-200: #1d3556;
+  --sl-300: #34506f;
+  --sl-400: #526d8a;
+  --sl-500: #6c84a0;
+  --sl-600: #3a526b;
+  --sl-700: #c4d1de;
+  --sl-800: #d9e2ec;
+  --sl-900: #e9eff6;
+  --sl-950: #f2f6fb;
+}
+
+/* Tema oscuro — navy profundo */
+.dark {
+  --sl-50: #ffffff;
+  --sl-100: #f5f8fc;
+  --sl-200: #e6ecf4;
+  --sl-300: #a7b8c9;
+  --sl-400: #8799ad;
+  --sl-500: #648098;
+  --sl-600: #2b3a4e;
+  --sl-700: #243346;
+  --sl-800: #1c2838;
+  --sl-900: #141d2a;
+  --sl-950: #0d1420;
 }
 
 @layer base {
@@ -31,14 +76,105 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-slate-50 text-slate-800 antialiased;
+    @apply bg-slate-950 font-sans text-slate-200 antialiased;
+    background-image: linear-gradient(180deg, #f2f6fb 0%, #e8eef6 55%, #e1e9f2 100%);
+    background-attachment: fixed;
   }
   .dark body {
     @apply bg-slate-950 text-slate-200;
+    background-image: linear-gradient(180deg, #17243c 0%, #101a2c 50%, #0d1420 100%);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
   }
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-indigo-500;
+    @apply outline-2 outline-offset-2 outline-indigo-300;
   }
+}
+
+@layer components {
+  /* Cristal adaptativo: blanco translúcido en claro, blanco tenue en oscuro */
+  .glass {
+    background-color: rgb(255 255 255 / 0.66);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  .dark .glass {
+    background-color: rgb(255 255 255 / 0.06);
+  }
+  .glass-strong {
+    background-color: rgb(255 255 255 / 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  .dark .glass-strong {
+    background-color: rgb(255 255 255 / 0.10);
+  }
+  .glass-soft {
+    background-color: rgb(255 255 255 / 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  .dark .glass-soft {
+    background-color: rgb(255 255 255 / 0.05);
+  }
+  .glass-border {
+    border-color: rgb(23 32 27 / 0.16);
+  }
+  .dark .glass-border {
+    border-color: rgb(255 255 255 / 0.10);
+  }
+
+  /* Orbes ambientales animados detrás del cristal */
+  .ambient {
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .ambient::before,
+  .ambient::after {
+    content: "";
+    position: absolute;
+    width: 65vmax;
+    height: 65vmax;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.55;
+    will-change: transform;
+  }
+  .ambient::before {
+    left: -12vw;
+    top: -14vh;
+    background: linear-gradient(135deg, rgb(140 190 255 / 0.85), rgb(150 160 255 / 0.85));
+    animation: deriva1 28s ease-in-out infinite alternate;
+  }
+  .ambient::after {
+    right: -14vw;
+    bottom: -18vh;
+    background: linear-gradient(135deg, rgb(130 220 255 / 0.85), rgb(120 190 245 / 0.80));
+    animation: deriva2 36s ease-in-out infinite alternate;
+  }
+  .dark .ambient::before {
+    background: linear-gradient(135deg, rgb(94 167 255 / 0.22), rgb(130 140 255 / 0.20));
+    opacity: 0.7;
+  }
+  .dark .ambient::after {
+    background: linear-gradient(135deg, rgb(34 211 238 / 0.16), rgb(120 180 255 / 0.14));
+    opacity: 0.7;
+  }
+}
+
+@keyframes deriva1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(10vw, 6vh) scale(1.15); }
+  100% { transform: translate(4vw, -4vh) scale(0.95); }
+}
+@keyframes deriva2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-9vw, -5vh) scale(1.1); }
+  100% { transform: translate(-3vw, 5vh) scale(0.9); }
 }
 
 @layer utilities {

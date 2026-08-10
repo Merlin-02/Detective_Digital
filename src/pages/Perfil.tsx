@@ -78,13 +78,13 @@ export function Perfil() {
                 <button
                   type="button"
                   onClick={cargarEjemplo}
-                  className="rounded-xl bg-indigo-600 px-5 py-2.5 font-semibold text-white hover:bg-indigo-500"
+                  className="rounded-xl bg-indigo-300 px-5 py-2.5 font-semibold text-black hover:bg-indigo-400"
                 >
                   {t('profile.demo.cta')}
                 </button>
                 <Link
                   to="/jugar"
-                  className="rounded-xl border border-slate-300 bg-white px-5 py-2.5 font-semibold text-slate-700 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200"
+                  className="rounded-xl border glass-border glass px-5 py-2.5 font-semibold text-slate-200"
                 >
                   {t('home.ctaPlay')}
                 </Link>
@@ -107,14 +107,14 @@ export function Perfil() {
           <button
             type="button"
             onClick={cargarEjemplo}
-            className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm font-semibold text-slate-600 hover:bg-slate-100 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-300"
+            className="rounded-lg border glass-border glass px-3 py-1.5 text-sm font-semibold text-slate-300 hover:bg-black/10 dark:hover:bg-white/10"
           >
             {t('profile.demo.cta')}
           </button>
           <button
             type="button"
             onClick={reset}
-            className="rounded-lg border border-rose-300 bg-white px-3 py-1.5 text-sm font-semibold text-rose-600 hover:bg-rose-50 dark:border-rose-800 dark:bg-slate-900 dark:text-rose-400"
+            className="rounded-lg border border-rose-500/30 bg-rose-400/10 px-3 py-1.5 text-sm font-semibold text-rose-600 dark:text-rose-300 backdrop-blur-xl hover:bg-rose-400/20"
           >
             {t('profile.reset')}
           </button>
@@ -235,7 +235,7 @@ export function Perfil() {
         </div>
       </div>
 
-      <p className="mt-8 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400">
+      <p className="mt-8 rounded-xl border glass-border glass px-4 py-3 text-sm text-slate-400">
         {t('profile.privacy')}
       </p>
     </div>
