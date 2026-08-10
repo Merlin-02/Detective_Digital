@@ -93,24 +93,24 @@
 }
 
 @layer components {
-  /* Cristal adaptativo: fondo sólido de respaldo + versión translúcida con blur */
+  /* Cristal adaptativo: paneles casi sólidos (frosted) sin verse transparentes */
   .glass {
     background-color: rgb(255 255 255 / 0.9);
   }
   .glass-strong {
-    background-color: rgb(246 249 253 / 0.95);
+    background-color: rgb(255 255 255 / 0.94);
   }
   .glass-soft {
-    background-color: rgb(255 255 255 / 0.82);
+    background-color: rgb(255 255 255 / 0.84);
   }
   .dark .glass {
-    background-color: rgb(30 44 63 / 0.85);
+    background-color: rgb(38 54 78 / 0.78);
   }
   .dark .glass-strong {
-    background-color: rgb(36 52 74 / 0.9);
+    background-color: rgb(44 62 88 / 0.85);
   }
   .dark .glass-soft {
-    background-color: rgb(26 38 55 / 0.8);
+    background-color: rgb(33 47 68 / 0.72);
   }
 
   @supports ((backdrop-filter: blur(4px)) or (-webkit-backdrop-filter: blur(4px))) {
@@ -119,24 +119,6 @@
     .glass-soft {
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
-    }
-    .glass {
-      background-color: rgb(255 255 255 / 0.85);
-    }
-    .glass-strong {
-      background-color: rgb(255 255 255 / 0.92);
-    }
-    .glass-soft {
-      background-color: rgb(255 255 255 / 0.75);
-    }
-    .dark .glass {
-      background-color: rgb(255 255 255 / 0.22);
-    }
-    .dark .glass-strong {
-      background-color: rgb(255 255 255 / 0.28);
-    }
-    .dark .glass-soft {
-      background-color: rgb(255 255 255 / 0.18);
     }
   }
   .glass-border {
