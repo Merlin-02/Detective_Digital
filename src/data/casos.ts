@@ -120,6 +120,15 @@ export const CASOS: Caso[] = [
     ],
     esIA: false,
     creado: 'curatoria',
+    multimedia: [
+      {
+        tipo: 'imagen',
+        src: '/media/c02-salto.jpg',
+        alt: 'Fotografía del partido donde el delantero parece saltar seis metros, con el marco de recorte visible.',
+        etiqueta: 'evidencia.imagen',
+        esDemo: true,
+      },
+    ],
   },
   {
     id: 'c03',
@@ -180,6 +189,15 @@ export const CASOS: Caso[] = [
     ],
     esIA: false,
     creado: 'curatoria',
+    multimedia: [
+      {
+        tipo: 'video',
+        src: '/media/c03-debate.mp4',
+        alt: 'Clip del debate en bucle: la candidata se toca el flequillo y, al reaparecer, se repite el mismo gesto con un micro-corte.',
+        etiqueta: 'evidencia.video',
+        esDemo: true,
+      },
+    ],
   },
   {
     id: 'c04',
@@ -300,6 +318,15 @@ export const CASOS: Caso[] = [
     ],
     esIA: true,
     creado: 'curatoria',
+    multimedia: [
+      {
+        tipo: 'audio',
+        src: '/media/c05-voz-clonada.mp3',
+        alt: 'Audio viral donde una voz aparentemente médica recomienda un suplemento. La voz suena con pausas demasiado regulares.',
+        etiqueta: 'evidencia.audio',
+        esDemo: true,
+      },
+    ],
   },
   {
     id: 'c06',
@@ -361,6 +388,15 @@ export const CASOS: Caso[] = [
     esIA: false,
     creado: 'comunidad',
     comunidad: { autor: 'Aya·Dana', votos: 32, estado: 'validado' },
+    multimedia: [
+      {
+        tipo: 'imagen',
+        src: '/media/c06-concierto.jpg',
+        alt: 'Foto de la plaza casi vacía durante el concierto, con el reloj digital del estadio marcando las 17:59.',
+        etiqueta: 'evidencia.imagen',
+        esDemo: true,
+      },
+    ],
   },
   {
     id: 'c07',
@@ -548,6 +584,15 @@ export const CASOS_EQUIPO: Caso[] = [
     ],
     esIA: false,
     creado: 'curatoria',
+    multimedia: [
+      {
+        tipo: 'video',
+        src: '/media/t01-marcha.mp4',
+        alt: 'Video presuntamente de la marcha actual que, al segundo tres, da un corte brusco y pasa a imágenes de otro lugar y otra fecha.',
+        etiqueta: 'evidencia.video',
+        esDemo: true,
+      },
+    ],
   },
   {
     id: 't02',
@@ -678,5 +723,14 @@ export const CASOS_EQUIPO: Caso[] = [
     ],
     esIA: true,
     creado: 'curatoria',
+    multimedia: [
+      {
+        tipo: 'audio',
+        src: '/media/t03-voz-clonada.mp3',
+        alt: 'Audio donde la voz de un presunto candidato promete supuestos beneficios en secreto; el patrón de pausas es sospechosamente regular.',
+        etiqueta: 'evidencia.audio',
+        esDemo: true,
+      },
+    ],
   },
 ]

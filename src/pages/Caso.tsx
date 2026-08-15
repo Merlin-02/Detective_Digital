@@ -8,6 +8,7 @@ import { dificultadDesbloqueada, puntajeDe } from '../services/label'
 import { traducirCaso } from '../services/traducirCaso'
 import type { Caso, Rol, Veredicto } from '../types'
 import { Card, CategoriaChip, DificultadChip, TipoChip, Chip } from '../components/ui'
+import { BloqueMedios } from '../components/VisorMultimedia'
 
 const ESTATICOS = [...CASOS, ...CASOS_EQUIPO]
 
@@ -286,6 +287,8 @@ function CasoIndividual({ caso }: { caso: Caso }) {
         <MarcadorContenido caso={caso} />
       </div>
 
+      <BloqueMedios medios={caso.multimedia} />
+
       <div className="mt-8">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-bold">{t('case.pistasTitle')}</h2>
@@ -393,6 +396,8 @@ function CasoEquipo({ caso }: { caso: Caso }) {
       <div className="mt-4">
         <MarcadorContenido caso={caso} />
       </div>
+
+      <BloqueMedios medios={caso.multimedia} />
 
       {estado === 'rol' && (
         <div className="mt-8">

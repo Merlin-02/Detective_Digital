@@ -45,6 +45,16 @@ export interface FuenteAnalizada {
   confiable: boolean
 }
 
+/** Medio adjunto a un caso para inspección directa en el juego (imagen, audio o video). */
+export interface MedioCaso {
+  tipo: 'imagen' | 'audio' | 'video'
+  src: string
+  alt: string
+  etiqueta?: string
+  /** Marca el medio como demo sintética generada para el prototipo. */
+  esDemo?: boolean
+}
+
 export interface ComunidadInfo {
   autor: string
   votos: number
@@ -79,6 +89,8 @@ export interface Caso {
   origen?: string
   /** Fecha de publicación del caso en su fuente. */
   fechaWeb?: string
+  /** Medios adjuntos (imagen, audio o video) para inspeccionar en el caso. */
+  multimedia?: MedioCaso[]
 }
 
 /** Caso capturado por el worker desde feeds de verificación de datos. */
